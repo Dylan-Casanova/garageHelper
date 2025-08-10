@@ -75,6 +75,11 @@ const LoginForm: React.FC = () => {
               Sign up here
             </Link>
           </Typography>
+          {error && (
+            <Typography color="error" variant="body2" textAlign="center">
+              {error}
+            </Typography>
+          )}
         </Stack>
       </Paper>
 
