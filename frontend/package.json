@@ -1,4 +1,5 @@
 {
+ "homepage": "https://dylan-casanova.github.io/react-node-crud",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -18,6 +19,7 @@
     "@types/react-dom": "^19.1.6",
     "axios": "^1.10.0",
     "dayjs": "^1.11.13",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
@@ -30,7 +32,9 @@
     "start:all": "npm start & cd ../backend && npm run dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
