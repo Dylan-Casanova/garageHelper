@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/garageHelper">
       <AppRoutes userEmail={userEmail} onLogout={handleLogout} />
     </BrowserRouter>
   );
