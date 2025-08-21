@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/garageHelper/static/css/main.e6c13ad2.css",
-    "main.js": "/garageHelper/static/js/main.c2e7a2cd.js",
+    "main.js": "/garageHelper/static/js/main.a8d12124.js",
     "static/js/453.670e15c7.chunk.js": "/garageHelper/static/js/453.670e15c7.chunk.js",
     "index.html": "/garageHelper/index.html",
     "main.e6c13ad2.css.map": "/garageHelper/static/css/main.e6c13ad2.css.map",
-    "main.c2e7a2cd.js.map": "/garageHelper/static/js/main.c2e7a2cd.js.map",
+    "main.a8d12124.js.map": "/garageHelper/static/js/main.a8d12124.js.map",
     "453.670e15c7.chunk.js.map": "/garageHelper/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c2e7a2cd.js"
+    "static/js/main.a8d12124.js"
   ]
 }
