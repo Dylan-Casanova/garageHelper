@@ -25,12 +25,9 @@ const ServoButton = forwardRef<ServoButtonRef, ServoButtonProps>(({ onLogout }, 
         setLoading(true);
         setError(null);
         setSuccess(false);
-        console.log("Servo clicked");
         try {
-            // logs action to db
+            // logs action to db & triggers servo
             await api.post("/servo", {});
-            //triggers servo
-            await axios.post(`${servoUrl}/servo`);
             setSuccess(true);
         } catch (err: any) {
             setError(err.response?.data?.message || "Failed to log action");
