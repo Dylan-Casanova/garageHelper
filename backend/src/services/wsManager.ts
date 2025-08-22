@@ -1,4 +1,5 @@
-import { WebSocketServer, WebSocket } from "ws";
+import { WebSocketServer } from "ws";
+import WebSocket from "ws";
 import type { Server as HttpServer } from "http";
 
 // Store mapping: userId → deviceSocket
