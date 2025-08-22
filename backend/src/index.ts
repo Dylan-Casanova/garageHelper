@@ -37,6 +37,6 @@ app.get("/ping", (_, res) => res.send("pong"));
 
 const PORT = parseInt(process.env.PORT || "5001", 10);
 server.listen(PORT, "0.0.0.0", () =>
-  console.log(`Server started on port ${PORT}`)
+  console.log(`Server started on port ${PORT},servo`)
 );
 

@@ -12,6 +12,7 @@ export const triggerServo = async (
 ) => {
   try {
     const userId = req.userId;
+    console.log('from controller,',userId)
     if (!userId) {
       return res.status(401).json({ message: "Unauthorized" });
     }
