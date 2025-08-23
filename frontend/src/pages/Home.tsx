@@ -15,7 +15,7 @@ import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import dayjs, { Dayjs } from "dayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-
+import api from "../api/axios";
 
 interface HomeProps {
   userEmail: string;
@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ userEmail, onLogout }) => {
     setOpen(true);
   };
 
-  const handleSchedule = () => {
+  const handleSchedule = async () => {
     if (!selectedTime) return;
 
     const now = dayjs();
@@ -42,10 +42,17 @@ const Home: React.FC<HomeProps> = ({ userEmail, onLogout }) => {
       return;
     }
 
-    setTimeout(() => {
-      console.log("Triggering servo at scheduled time:", selectedTime.format("HH:mm"));
-      servoRef.current?.triggerNow(); 
-    }, diffMs);
+
+    try {
+      const res = await api.post("/servo", {
+        triggerAt: selectedTime.toISOString(),
+      });
+      console.log("Servo scheduled:", res.data);
+      alert(`Servo scheduled for ${selectedTime.format("HH:mm")}`);
+    } catch (err) {
+      console.error("Error scheduling servo:", err);
+      alert("Failed to schedule servo");
+    }
 
     setOpen(false);
   };
@@ -63,7 +70,10 @@ const Home: React.FC<HomeProps> = ({ userEmail, onLogout }) => {
 
       <Container maxWidth="sm" sx={{ mt: 8, textAlign: "center" }}>
         <Box sx={{ mt: 4 }}>
+          {/* Immediate trigger button (via ServoButton component) */}
           <ServoButton ref={servoRef} onLogout={onLogout} />
+
+          {/* Schedule trigger button */}
           <Button
             variant="contained"
             color="secondary"
